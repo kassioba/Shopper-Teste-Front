@@ -84,7 +84,7 @@ export const Button = styled.button<updateButton>`
     background-color: ${props=> !props.updatebutton ? '#0DAB77' : '#969696'};
     font-size: 20px;
     font-weight: 600;
-    color: #fff;
+    color: ${props=> !props.updatebutton ? '#fff' : '#646363'};
     cursor: ${props=> !props.updatebutton && 'pointer'};
 
     &:hover{

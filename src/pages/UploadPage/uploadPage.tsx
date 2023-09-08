@@ -46,7 +46,13 @@ import { Table } from "../../components/Table/Table";
             console.log(inputRef.current !== null && res.data.error)
             if(inputRef.current !== null && res.data.error) inputRef.current.value = ''
           })
-          .catch(err => console.log(err.response.data))
+          .catch(err => {
+            if(err.response.status === 400) alert('As linhas do arquivo precisam estar no formato |product_code,new_price|, sendo product_code um número inteiro positivo e new_price um número positivo. Por favor, corrija o arquivo e tente novamente.')
+            else alert(err.response.data)
+
+            if(inputRef.current !== null) inputRef.current.value = ''
+            setFile(undefined)
+          })
       }
 
     function updateData(){
@@ -57,23 +63,17 @@ import { Table } from "../../components/Table/Table";
       const formData = new FormData();
         formData.append("file", file);
          
-        // axios.post(`${import.meta.env.VITE_API_URL}/update`, formData, {
-        //     headers: {
-        //       "Content-Type": "multipart/form-data",
-        //     },
-        //   }).then(res => {
-        //     console.log(res.data)
-        //   })
-        //   .catch(err => console.log(err.response.data))
-
-        axios.get(`${import.meta.env.VITE_API_URL}/health`).then(res => {
-          console.log(res.data)
-          alert('Produtos atualizados com sucesso!')
-          if(inputRef.current !== null) inputRef.current.value = ''
-          setFile(undefined)
-          setShowTable(false)
-        })
-        .catch(err => console.log(err.response.data))
+        axios.put(`${import.meta.env.VITE_API_URL}/update`, formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }).then(res => {
+            alert('Produtos atualizados com sucesso!')
+            if(inputRef.current !== null) inputRef.current.value = ''
+            setFile(undefined)
+            setShowTable(false)
+          })
+          .catch(err => alert(err.response.data))
     }
 
     return (

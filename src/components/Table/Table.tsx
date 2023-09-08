@@ -4,12 +4,12 @@ import { Row } from "../Row/Row";
 import { TableContainer } from "./styles";
 
 export function Table({ products }: Products){
-    console.log()
     return (
     <TableContainer>
         <FirstRow/>
         {products?.response.map(prod => (
         <Row 
+            key={prod.name}
             code={prod.code} 
             name={prod.name}
             current_price={prod.current_price}
