@@ -43,7 +43,6 @@ import { Table } from "../../components/Table/Table";
             setProducts(res.data)
             setShowTable(true)
             if(!res.data.error) setUpdateButton(false)
-            console.log(inputRef.current !== null && res.data.error)
             if(inputRef.current !== null && res.data.error) inputRef.current.value = ''
           })
           .catch(err => {

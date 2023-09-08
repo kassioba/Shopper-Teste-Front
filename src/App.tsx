@@ -19,8 +19,6 @@ body{
   padding: 0;
   font-family: 'Inter', sans-serif;
   background-color: #E8F3D8;
-
-  
 }
 `
 
