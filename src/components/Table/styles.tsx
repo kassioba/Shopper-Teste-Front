@@ -7,6 +7,6 @@ export const TableContainer = styled.div`
     border-radius: 20px;
     padding: 5px 23px 15px;
     box-sizing: border-box;
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
 `
