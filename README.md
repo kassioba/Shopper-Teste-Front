@@ -1,5 +1,7 @@
 # Shopper-Teste-Front
-Programa para atualizar preços de tabelas de mercado feito para o teste da vaga de Desenvolvedor FullStack Junior da startup Shopper. Este é o Front-End do projeto.
+Programa para atualizar preços de tabelas de mercado feito para o teste da vaga de Desenvolvedor FullStack Junior da startup Shopper. Este é o Front-End do projeto.  
+
+Link do repositório Back-end: https://github.com/kassioba/Shopper-Teste-Back
 
 # Tecnologias utilizadas
 - TypeScript
